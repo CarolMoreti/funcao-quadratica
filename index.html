@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Função Quadrática na Prática</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏀 Função Quadrática: Um Arremesso Perfeito</h1>
+    <p>Entenda a função quadrática por meio de um lance no basquete!</p>
+  </header>
+
+  <main>
+    <section id="problema">
+      <h2>1️⃣ Situação-Problema</h2>
+      <p>
+        Imagine que um jogador de basquete faz um arremesso. A trajetória da bola, em relação ao tempo, segue uma curva.
+        Dizemos que a altura da bola (h) em metros, em função do tempo (t) em segundos, é dada por:
+        <strong>h(t) = -5t² + 10t + 2</strong>
+      </p>
+      <p>
+        Transpondo da linguagem cotidiana para a algébrica:
+        <ul>
+          <li><strong>-5t²</strong>: aceleração da gravidade (a bola sobe e depois desce);</li>
+          <li><strong>+10t</strong>: velocidade inicial do arremesso;</li>
+          <li><strong>+2</strong>: altura da bola no momento do arremesso.</li>
+        </ul>
+      </p>
+    </section>
+
+    <section id="metodos">
+      <h2>2️⃣ Métodos de Resolução</h2>
+      <p>Queremos saber: <strong>em que momento a bola atinge o solo?</strong></p>
+      <p>Para isso, resolvemos a equação: <strong>h(t) = 0</strong>, ou seja: <em>-5t² + 10t + 2 = 0</em></p>
+
+      <h3>🧮 a) Fórmula de Bhaskara</h3>
+      <p>
+        Coeficientes: a = -5, b = 10, c = 2
+        <br /> <br><br>
+        Δ = b² - 4ac   >  >  >   10² - 4×(-5)×2 = 100 + 40 = 140
+        <br /> <br><br>
+        t = (-b ± √Δ) / 2a   >  >  >   (-10 ± √140) / (-10)
+        <br /> <br><br>
+        Aproximando √140 ≈ 11.83:
+        <br /> <br><br>
+        <span style="color: red;">t₁ ≈ (-10 + 11.83)/(-10) = -0.183s (desprezamos por ser negativo)</span>
+        <br /> <br><br>
+        <span style="color: green;">t₂ ≈ (-10 - 11.83)/(-10) = 2.183s → <strong>tempo até a bola tocar o solo</strong></span>
+        
+      </p>
+
+      <h3>📐 b) Completando Quadrados</h3>
+      <p>
+        Essa técnica transforma a equação em uma forma que permite identificar o vértice.
+        <br />
+        h(t) = -5(t² - 2t - 0.4)
+        <br />
+        Completando quadrado: h(t) = -5[(t - 1)² - 1.4]
+        <br />
+        h(t) = -5(t - 1)² + 7 → <strong>Forma de vértice</strong>
+      </p>
+    </section>
+    <h2>3️⃣ Representação Gráfica</h2>
+      <p>A função h(t) = -5t² + 10t + 2 é uma parábola com concavidade para baixo (a &lt; 0).</p>
+    <main class="grafico">
+        <section>
+          <h2>📈 Gráfico da Função h(t) = -5t² + 10t + 2</h2>
+          <p>Este gráfico mostra a trajetória da bola em função do tempo:</p>
+          <canvas id="graficoParabola" width="600" height="400"></canvas>
+        </section>
+    
+        <section>
+          <h2>🧠 Análise</h2>
+          <ul>
+            <li>🕒 Vértice: t = 1s → h = 7m</li>
+            <li>📍 Zeros: t ≈ -0,18s (ignorado) e t ≈ 2,18s</li>
+            <li>📈 Cresce até o vértice, depois decresce</li>
+          </ul>
+        </section>
+      </main>
+
+    <section id="conclusao">
+      <h2>4️⃣ Conclusão</h2>
+      <p>
+        A partir da equação h(t) = -5t² + 10t + 2, descobrimos que:
+        <ul>
+          <li>🕐 A bola atinge o ponto mais alto após 1 segundo</li>
+          <li>📏 A altura máxima é de 7 metros</li>
+          <li>🛬 A bola toca o chão após aproximadamente 2,18 segundos</li>
+        </ul>
+        Concluímos que a função quadrática pode descrever com precisão situações reais, como a trajetória de um arremesso no basquete!
+      </p>
+    </section>
+  </main>
+  <div class="container">
+    <h1>Gráfico de Função Quadrática</h1>
+    
+    <form id="funcaoForm">
+      <label for="entradaFuncao">Digite a função (ex: -5x^2 + 10x + 2):</label>
+      <input type="text" id="entradaFuncao" placeholder="Ex: -2x^2 + 4x + 1" required />
+      <button type="submit">Gerar Gráfico</button>
+    </form>
+
+    <div class="grafico-container">
+      <canvas id="graficoParabolas"></canvas>
+    </div>
+  </div>
+  <footer>
+    <p>Site produzido por: Carolline Moreti nº4</p>
+    <p>3ªA – SESI 123 | 2025</p>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</html>
